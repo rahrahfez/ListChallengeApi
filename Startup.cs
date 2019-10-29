@@ -31,7 +31,11 @@ namespace ListChallengeApi
 			services.AddCors(options =>
 				{
                     options.AddPolicy(MyAllowSpecificOrigins,
-                        builder => builder.WithOrigins("https://listchallenge-01.web.app/"));
+                        builder => {
+                            builder.WithOrigins("https://listchallenge-01.web.app/")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                            });
 				});
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
