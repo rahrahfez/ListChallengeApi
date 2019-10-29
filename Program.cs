@@ -15,19 +15,20 @@ namespace ListChallengeApi
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
-        }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
-        {
-            var port = Environment.GetEnvironmentVariable("PORT");
-
-            return WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+            var host = CreateWebHostBuilder(args)
                 .UseKestrel()
-                .UseIISIntegration()
-                .UseUrls("http://*:5000");
+                .UseUrls("http://0.0.0.0" + Environment.GetEnvironmentVariable("PORT"))
+                .Build();
+            
+            
+            host.Run();
         }
+
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();
+                
+        
             
     }
 }
