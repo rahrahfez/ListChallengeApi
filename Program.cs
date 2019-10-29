@@ -26,7 +26,7 @@ namespace ListChallengeApi
                 .UseStartup<Startup>()
                 .UseKestrel()
                 .UseIISIntegration()
-                .UseUrls("http://*:5000");
+                .UseUrls("0.0.0.0:5000");
         }
             
     }
