@@ -120,16 +120,16 @@ namespace ListChallengeServer.Controllers
             try
             {
                 var factoryToBeDeleted = await _repo.Factory.GetFactoryByIdAsync(id);
-                var factoryLabel = factoryToBeDeleted.Label;
                 
                 if (factoryToBeDeleted == null)
                 {
                     return NotFound();
                 }
+                
 
                 await _repo.Factory.DeleteFactoryAsync(factoryToBeDeleted);
 
-                return Ok(factoryLabel);
+                return NoContent();
             }
             catch (Exception ex)
             {
