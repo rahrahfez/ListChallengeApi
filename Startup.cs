@@ -32,7 +32,7 @@ namespace ListChallengeApi
 				{
                     options.AddPolicy(MyAllowSpecificOrigins,
                         builder => {
-                            builder.WithOrigins("https://listchallenge-01.web.app/")
+                            builder.WithOrigins("https://listchallenge-01.web.app")
                             .AllowAnyHeader()
                             .AllowAnyMethod();
                             });
