@@ -18,10 +18,9 @@ namespace ListChallengeApi
             var host = CreateWebHostBuilder(args)
                 .UseKestrel(options =>
                     { 
-                        options.ListenAnyIP(Int32.Parse(
-                            System.Environment.GetEnvironmentVariable("PORT")));
+                        // options.ListenAnyIP(Int32.Parse(
+                        //     System.Environment.GetEnvironmentVariable("PORT")));
                     })
-                .UseUrls("https://0.0.0.0:5000")
                 .Build();
             
             

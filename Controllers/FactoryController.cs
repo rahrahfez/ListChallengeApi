@@ -47,8 +47,6 @@ namespace ListChallengeServer.Controllers
                     return NotFound();
                 }
 
-                
-
                 return Ok(factory);
             }
             catch (Exception ex)
@@ -122,7 +120,8 @@ namespace ListChallengeServer.Controllers
             try
             {
                 var factoryToBeDeleted = await _repo.Factory.GetFactoryByIdAsync(id);
-
+                var factoryLabel = factoryToBeDeleted.Label;
+                
                 if (factoryToBeDeleted == null)
                 {
                     return NotFound();
@@ -130,7 +129,7 @@ namespace ListChallengeServer.Controllers
 
                 await _repo.Factory.DeleteFactoryAsync(factoryToBeDeleted);
 
-                return NoContent();
+                return Ok(factoryLabel);
             }
             catch (Exception ex)
             {
