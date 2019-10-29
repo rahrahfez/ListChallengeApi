@@ -50,7 +50,7 @@ namespace ListChallengeApi
             }
             app.UseStaticFiles();
             app.UseCors(MyAllowSpecificOrigins);
-            // app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
