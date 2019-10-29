@@ -31,7 +31,7 @@ namespace ListChallengeApi
 			services.AddCors(options =>
 				{
                     options.AddPolicy(MyAllowSpecificOrigins,
-                        builder => builder.WithOrigins("http://localhost:4200"));
+                        builder => builder.WithOrigins("https://listchallenge-01.web.app/"));
 				});
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
