@@ -32,7 +32,7 @@ namespace ListChallengeApi
 				{
                     options.AddPolicy(MyAllowSpecificOrigins,
                         builder => {
-                            builder.WithOrigins("https://listchallenge-01.web.app", "http://localhost:4200")
+                            builder.WithOrigins("https://listchallenge-01.web.app")
                             .AllowAnyHeader()
                             .AllowAnyMethod();
                             });
@@ -54,7 +54,7 @@ namespace ListChallengeApi
             }
             app.UseStaticFiles();
             app.UseCors(MyAllowSpecificOrigins);
-            // app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
