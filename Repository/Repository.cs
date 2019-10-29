@@ -48,6 +48,15 @@ namespace ListChallengeApi.Repository
             DeleteAll(child);
             await SaveAsync();
         }
+        public async Task DeleteChildByFactoryId(Guid id)
+        {
+            var childs = await GetAllChildValuesByFactoryIdAsync(id);
+            foreach(var child in childs)
+            {
+                Delete(child);
+            }
+            await SaveAsync();
+        }
         public async Task DeleteChildAsync(Child child)
         {
             Delete(child);

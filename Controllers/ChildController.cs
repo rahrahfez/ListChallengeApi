@@ -100,6 +100,20 @@ namespace ListChallengeApi.Controllers
 						return StatusCode(500, $"Internal Server Error { ex.Message }");
 				}
 		}
+		[HttpDelete("{id}")]
+		public async Task<IActionResult> DeleteChildByFactoryId(Guid id)
+		{
+			try
+			{
+					await _repo.Child.DeleteChildByFactoryId(id);
+
+					return NoContent();
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(500, $"Internal Server Error { ex.Message }");
+			}
+		}
 		[HttpDelete]
 		public async Task<IActionResult> DeleteChildAsync(Child child)
 		{

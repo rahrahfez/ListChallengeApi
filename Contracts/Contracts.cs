@@ -15,6 +15,7 @@ namespace ListChallengeApi.Contracts
 		Task CreateChildAsync(Child child);
 		Task CreateChildInBulkAsync(List<Child> childs);
 		Task DeleteAllChildAsync(IEnumerable<Child> child);
+		Task DeleteChildByFactoryId(Guid id);
 		Task DeleteChildAsync(Child child);
 	}
 	public interface IFactoryRepository
