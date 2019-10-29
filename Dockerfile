@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
 WORKDIR /app
-EXPOSE 80
+EXPOSE 5000
 
 # copy csproj and restore as distinct layers
 COPY *.csproj ./
