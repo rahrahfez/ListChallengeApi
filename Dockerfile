@@ -12,5 +12,5 @@ RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 
 WORKDIR /app
-COPY --from=build /app ./
+COPY --from=build /app/out .
 ENTRYPOINT ["dotnet", "ListChallengeApi.dll"]

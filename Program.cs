@@ -24,7 +24,7 @@ namespace ListChallengeApi
 
             return WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls("http://*:" + port);
+                .UseUrls("http://*:5000");
         }
             
     }
