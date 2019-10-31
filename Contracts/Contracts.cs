@@ -13,8 +13,8 @@ namespace ListChallengeApi.Contracts
 		Task<IEnumerable<Child>> GetAllChildValuesByFactoryIdAsync(Guid id);
 		Task<Child> GetChildByIdAsync(Guid id);
 		Task CreateChildAsync(Child child);
-		Task CreateChildInBulkAsync(List<Child> childs);
-		Task DeleteAllChildAsync(IEnumerable<Child> child);
+		Task CreateChildInListAsync(IEnumerable<Child> childs);
+		Task DeleteAllChildAsync(IEnumerable<Child> childs);
 		Task DeleteChildByFactoryId(Guid id);
 		Task DeleteChildAsync(Child child);
 	}

@@ -30,7 +30,7 @@ namespace ListChallengeApi.Repository
         {
             return await FindAll().ToListAsync();
         }
-        public async Task CreateChildInBulkAsync(List<Child> childs)
+        public async Task CreateChildInListAsync(IEnumerable<Child> childs)
         {
             foreach (var child in childs)
             {
